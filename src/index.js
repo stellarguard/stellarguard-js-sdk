@@ -7,7 +7,7 @@ function StellarGuard() {}
 
 StellarGuard.prototype.useTestNetwork = function() {
   this.httpClient = axios.create({
-    baseURL: 'http://localhost:3000/api'
+    baseURL: 'http://test.stellarguard.me/api'
   });
 };
 

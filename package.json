@@ -1,6 +1,6 @@
 {
   "name": "@stellarguard/sdk",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description":
     "Browser and NodeJS SDK for interacting with StellarGuard.me API.",
   "main": "src/index.js",
