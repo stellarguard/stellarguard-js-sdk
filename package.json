@@ -1,0 +1,17 @@
+{
+  "name": "@stellarguard/sdk",
+  "version": "1.0.0",
+  "description":
+    "Browser and NodeJS SDK for interacting with StellarGuard.me API.",
+  "main": "src/index.js",
+  "repository": "git@github.com:stellarguard/stellarguard-js-sdk.git",
+  "author": "StellarGuard.me",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "axios": "^0.18.0"
+  },
+  "devDependencies": {
+    "stellar-sdk": "^0.8.0"
+  }
+}
