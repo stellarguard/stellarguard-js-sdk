@@ -41,6 +41,9 @@ function submitTransaction() {
       } else {
         console.log('From Horizon', result);
       }
+    })
+    .catch(function(err) {
+      console.error(err);
     });
 }
 
