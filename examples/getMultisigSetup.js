@@ -6,19 +6,19 @@ var server = new StellarSdk.Server('https://horizon-testnet.stellar.org');
 StellarGuardSdk.useTestNetwork();
 
 // sign up for your own test account at https://test.stellarguard.me
-var email = '';
-var publicKey = '';
+var externalId = ''; // get your external id by going to the "Settings" page in the top right user menu (or /settings)
+var publicKey = ''; // the public key of the account you want to protect with StellarGuard
 var backupSigner = ''; // OPTIONAL backup signer - see https://stellarguard.me/faq#backup-signer
 
-getMultisigSetup(publicKey, email /* backupSigner */);
+getMultisigSetup(externalId, publicKey /* backupSigner */);
 
 // implementation
-function getMultisigSetup(publicKey, email, backupSigner) {
-  StellarGuardSdk.getMultigSetup(publicKey, email, backupSigner)
+function getMultisigSetup(externalId, publicKey, backupSigner) {
+  StellarGuardSdk.getMultigSetup(externalId, publicKey, backupSigner)
     .then(function(result) {
       console.log(result);
     })
     .catch(function(err) {
-      console.error(err.data);
+      console.error(err.response.data);
     });
 }
