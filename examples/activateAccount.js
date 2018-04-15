@@ -5,15 +5,13 @@ StellarSdk.Network.useTestNetwork();
 var server = new StellarSdk.Server('https://horizon-testnet.stellar.org');
 StellarGuardSdk.useTestNetwork();
 
-// sign up for your own test account at https://test.stellarguard.me
-var email = '';
-var publicKey = '';
+var publicKey = ''; // the account that is protected by StellarGuard
 
-activateAccount(publicKey, email);
+activateAccount(publicKey);
 
 // implementation
-function activateAccount(publicKey, email) {
-  StellarGuardSdk.activateAccount(publicKey, email)
+function activateAccount(publicKey) {
+  StellarGuardSdk.activateAccount(publicKey)
     .then(function(result) {
       console.log(result);
     })
