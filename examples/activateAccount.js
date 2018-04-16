@@ -5,7 +5,7 @@ StellarSdk.Network.useTestNetwork();
 var server = new StellarSdk.Server('https://horizon-testnet.stellar.org');
 StellarGuardSdk.useTestNetwork();
 
-var publicKey = ''; // the account that is protected by StellarGuard
+var publicKey = ''; // the public key of the account that is protected by StellarGuard
 
 activateAccount(publicKey);
 

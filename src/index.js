@@ -34,15 +34,15 @@ StellarGuard.prototype.submitTransaction = function(transaction) {
 };
 
 StellarGuard.prototype.getMultigSetup = function(
-  externalId,
   publicKey,
+  stellarGuardPublicKey,
   backupSignerPublicKey
 ) {
   this._verifyNetworkSet();
   return this.httpClient
-    .get('/users/' + encodeURIComponent(externalId) + '/multisig', {
+    .get('/accounts/' + publicKey + '/multisig', {
       params: {
-        publicKey: publicKey,
+        stellarGuardPublicKey: stellarGuardPublicKey,
         backupSignerPublicKey: backupSignerPublicKey
       }
     })
@@ -53,11 +53,9 @@ StellarGuard.prototype.getMultigSetup = function(
 
 StellarGuard.prototype.activateAccount = function(publicKey) {
   this._verifyNetworkSet();
-  return this.httpClient
-    .post('/accounts', { publicKey: publicKey })
-    .then(function(result) {
-      return result.data;
-    });
+  return this.httpClient.post('/accounts/' + publicKey).then(function(result) {
+    return result.data;
+  });
 };
 
 StellarGuard.prototype._verifyNetworkSet = function() {
