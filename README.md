@@ -14,10 +14,10 @@ StellarGuardSdk.useTestNetwork(); // or StellarGuardSdk.usePublicNetwork();
 
 if(StellarGuardSdk.hasStellarGuard(account)) {
   StellarGuardSdk.submitTransaction(transaction)
-    .then(function(result)) {
+    .then(function(result) {
       console.log(result.url); // https://test.stellarguard.me/transactions/<id>
-    }
-});
+    });
+}
 ```
 
 ## Examples
