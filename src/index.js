@@ -33,6 +33,13 @@ StellarGuard.prototype.submitTransaction = function(transaction) {
     });
 };
 
+StellarGuard.prototype.getAccount = function(publicKey) {
+  this._verifyNetworkSet();
+  return this.httpClient.get('/accounts/' + publicKey).then(function(result) {
+    return result.data;
+  });
+};
+
 StellarGuard.prototype.getMultigSetup = function(
   publicKey,
   stellarGuardPublicKey,

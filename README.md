@@ -23,5 +23,6 @@ if(StellarGuardSdk.hasStellarGuard(account)) {
 ## Examples
 
 * [Submitting a Transaction](examples/submitTransaction.js)
+* [Getting Basic Account Information](examples/getAccount.js)
 * [Getting Multisig Setup XDR as Pre-Activation Step](examples/getMultisigSetup.js)
 * [Activating an Account after Multisig is Setup](examples/activateAccount.js)
