@@ -29,7 +29,8 @@ function submitTransaction() {
       transaction.sign(sourceKeypair);
 
       if (StellarGuardSdk.hasStellarGuard(account)) {
-        return StellarGuardSdk.submitTransaction(transaction);
+        var callback = undefined; // add an optional callback such as https://webhook.site/cc677ade-969d-411e-9b9c-93745f69d37b
+        return StellarGuardSdk.submitTransaction(transaction, callback);
       } else {
         return server.submitTransaction(transaction);
       }

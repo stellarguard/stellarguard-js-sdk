@@ -23,11 +23,11 @@ StellarGuard.prototype.hasStellarGuard = function(account) {
   });
 };
 
-StellarGuard.prototype.submitTransaction = function(transaction) {
+StellarGuard.prototype.submitTransaction = function(transaction, callback) {
   this._verifyNetworkSet();
   var xdr = transaction.toEnvelope().toXDR('base64');
   return this.httpClient
-    .post('/transactions', { xdr: xdr })
+    .post('/transactions', { xdr: xdr, callback: callback })
     .then(function(result) {
       return result.data;
     });
